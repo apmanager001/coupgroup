@@ -25,12 +25,8 @@ export const standaloneProjects: ProjectShowcase[] = [
     url: "https://boringsquirrel.com",
     domain: "boringsquirrel.com",
     summary:
-      "A standalone brand property designed to feel memorable immediately, with playful energy wrapped in a polished front-end shell.",
-    highlights: [
-      "Distinct brand voice",
-      "Conversion-ready landing flow",
-      "Independent domain presence",
-    ],
+      "Play small, strange, and satisfying games built right here, then dive into posts about game design, media, and whatever else the squirrel drags in.",
+    highlights: ["Play Games", "Read Posts", "Track Scores on Leadboard"],
     accent: "#f97316",
     glow: "#fed7aa",
   },
@@ -39,11 +35,11 @@ export const standaloneProjects: ProjectShowcase[] = [
     url: "https://prepify.study",
     domain: "prepify.study",
     summary:
-      "A study-focused experience shaped around clarity, confidence, and a clean path from first glance to deeper engagement.",
+      "Prepify is a student-led nonprofit platform dedicated to helping anyone manage their time better, reduce study stress, and stay on track — whether you’re in high school, college, or pursuing professional certifications. We provide free, easy-to-use tools that help you plan, focus, and build habits that last.",
     highlights: [
-      "Education-first hierarchy",
-      "Trust-building presentation",
-      "Focused independent product branding",
+      "Study Tools",
+      "Study Music",
+      "Create notes and calendar events",
     ],
     accent: "#0ea5e9",
     glow: "#bae6fd",
@@ -67,11 +63,25 @@ export const standaloneProjects: ProjectShowcase[] = [
     url: "https://quiltedchronicles.org",
     domain: "quiltedchronicles.org",
     summary:
-      "A narrative-led destination with a warmer editorial feel, built to let brand texture and long-form reading coexist cleanly.",
+      "Create epic tales together, one chapter at a time. Start a story, continue an adventure, or explore infinite narrative possibilities in our growing community of creative writers.",
     highlights: [
-      "Story-led presentation",
-      "Warm editorial styling",
-      "Independent nonprofit-style identity",
+      "Collaborative storytelling",
+      "Multiple Endings",
+      "Branched Storytelling",
+    ],
+    accent: "#8b5cf6",
+    glow: "#ddd6fe",
+  },
+  {
+    name: "Locale Michigan",
+    url: "https://localemichigan.com",
+    domain: "localemichigan.com",
+    summary:
+      "Discover vibrant cities, stunning lighthouses, serene parks, fascinating museums, and breathtaking lakes. Your Michigan adventure starts here!",
+    highlights: [
+      "Explore Cities",
+      "Visit Lighthouses",
+      "Enjoy Parks and Lakes",
     ],
     accent: "#8b5cf6",
     glow: "#ddd6fe",
@@ -80,29 +90,30 @@ export const standaloneProjects: ProjectShowcase[] = [
 
 export const coupgroupProjects: ProjectShowcase[] = [
   {
-    name: "Journal",
+    name: "Cosmic Journal",
     url: "https://journal.coupgroup.com",
     domain: "journal.coupgroup.com",
     summary:
-      "A Coupgroup publication surface meant for recurring entries, notes, and updates with a lighter publishing rhythm.",
+      "Track your habits and journal through the cosmos. Build consistency, explore your thoughts and reach for the stars.",
     highlights: [
-      "Subdomain publishing surface",
-      "Reusable information architecture",
-      "Clear parent-brand relationship",
+      "Habit Tracker",
+      "Log Journal Entries",
+      "Create a Bucketlist",
+      "Track your Goals"
     ],
     accent: "#38bdf8",
     glow: "#bfdbfe",
   },
   {
-    name: "Share",
+    name: "Aura Share",
     url: "https://share.coupgroup.com",
     domain: "share.coupgroup.com",
     summary:
-      "A utility-first Coupgroup property built around moving content quickly while still feeling aligned with the parent ecosystem.",
+      "AuraShare lets you manage your social posts, then blast it to your social channels with rich descriptions and consistent branding.",
     highlights: [
-      "Utility-focused interface",
-      "Fast, low-friction surface",
-      "Coupgroup ecosystem extension",
+      "AI suggested Posts",
+      "Save Posts",
+      "Share posts with social channels",
     ],
     accent: "#f59e0b",
     glow: "#fde68a",
@@ -112,9 +123,9 @@ export const coupgroupProjects: ProjectShowcase[] = [
 export const allProjects = [...standaloneProjects, ...coupgroupProjects];
 
 export const featuredStats = [
-  { value: `${allProjects.length}`, label: "Live launches" },
-  { value: `${standaloneProjects.length}`, label: "Standalone domains" },
-  { value: `${coupgroupProjects.length}`, label: "Coupgroup surfaces" },
+  { value: `${allProjects.length}`, label: "Live Projects" },
+  { value: `${standaloneProjects.length}`, label: "Standalone Projects" },
+  { value: `${coupgroupProjects.length}`, label: "Personal Projects" },
 ] as const;
 
 export function getSiteUrl(): string {

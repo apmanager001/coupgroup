@@ -1,5 +1,12 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: true;
+  color-scheme: retro;
+  --color-primary: black;
+  --color-primary-content: white;
+}
 
 :root {
   --page-light: #fff7ef;
@@ -122,12 +129,20 @@ a {
   backdrop-filter: blur(24px);
 }
 
+/* Use CSS Grid for consistent card heights instead of column masonry */
 .masonry-grid {
-  column-gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
 }
 
 .project-tile {
+  /* allow cards to stretch to the height of the grid row */
   break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .float-orb {
@@ -171,14 +186,3 @@ a {
   }
 }
 
-
-@layer components {
-  .btn-base {
-    @apply btn rounded-full border-0 px-5 text-white;
-    background-color: #050913;
-  }
-
-  .btn-base:hover {
-    background-color: #1e293b; /* slate-800 */
-  }
-}

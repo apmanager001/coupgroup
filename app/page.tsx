@@ -112,12 +112,12 @@ function ProjectCard({
 
   return (
     <article
-      className={`project-tile card mb-6 overflow-hidden rounded-[1.9rem] border p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 ${
+      className={`project-tile card mb-6 overflow-hidden rounded-[1.9rem] border p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 flex h-full flex-col ${
         dark ? "text-white" : "text-slate-950"
       }`}
       style={cardStyle}
     >
-      <div className="card-body gap-6 p-0">
+      <div className="card-body flex flex-col flex-1 gap-6 p-0">
         <div className="flex flex-wrap items-center gap-2">
           <span
             className={`badge border-0 px-3 py-3 text-[0.62rem] font-semibold uppercase tracking-[0.24em] ${
@@ -178,23 +178,19 @@ function ProjectCard({
         </div>
 
         <div
-          className={`flex items-center justify-between gap-4 rounded-[1.4rem] border px-4 py-3 ${
+          className={`flex items-center justify-between gap-4 rounded-[1.4rem] border px-4 py-3 mt-auto ${
             dark ? "border-white/10 bg-white/5" : "border-white/60 bg-white/60"
           }`}
         >
           <p
-            className={`font-mono text-xs uppercase tracking-[0.2em] ${
+            className={`font-mono text-xs uppercase tracking-[0.2em] flex-1 min-w-0 ${
               dark ? "text-white/58" : "text-slate-500"
             }`}
           >
-            Live at {project.domain}
+            Live at <span className="truncate block">{project.domain}</span>
           </p>
           <a
-            className={`btn-base btn-sm  ${
-              dark
-                ? "bg-white text-slate-950 hover:bg-white/90"
-                : "bg-slate-950 text-white hover:bg-slate-800"
-            }`}
+            className={`btn btn-ghost rounded-2xl shrink-0`}
             href={project.url}
             target="_blank"
             rel="noreferrer"
@@ -261,11 +257,14 @@ export default function Home() {
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-24 px-5 pb-20 pt-6 sm:px-8 lg:px-10 lg:pt-8">
         <header className="glass-panel flex flex-col gap-4 rounded-full px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <div className="flex items-center gap-4">
-            <div className="flex size-11 items-center justify-center rounded-full bg-slate-950 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-white">
+            <div className="flex size-11 items-center justify-center rounded-full bg-slate-950 shadow-lg text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-white">
               RF
             </div>
             <div>
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-slate-500" aria-label="Author name">
+              <p
+                className="text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-slate-500"
+                aria-label="Author name"
+              >
                 Robert Foley
               </p>
               <p className="text-sm text-slate-800" aria-label="Author role">
@@ -275,7 +274,7 @@ export default function Home() {
           </div>
 
           <a
-            className="btn-base"
+            className="btn btn-ghost text-white rounded-full"
             href={siteAuthor.personalSite}
             target="_blank"
             rel="noreferrer"
@@ -308,7 +307,7 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-3">
               <a
-                className="btn-base"
+                className="btn btn-ghost rounded-full"
                 href={siteAuthor.personalSite}
                 target="_blank"
                 rel="noreferrer"
@@ -346,7 +345,9 @@ export default function Home() {
 
           <aside className="deep-panel rounded-[2.2rem] px-6 py-7 sm:px-8 sm:py-8">
             <div className="space-y-5">
-              <p className="eyebrow text-white" aria-label="Author note">Author note</p>
+              <p className="eyebrow text-white" aria-label="Author note">
+                Author note
+              </p>
               <h2 className="font-display balance-text text-3xl font-semibold leading-tight text-white sm:text-4xl">
                 Every featured project here is authored by Robert Foley.
               </h2>
@@ -470,7 +471,7 @@ export default function Home() {
         </section>
 
         <section className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.7fr)]">
-          <div className="glass-panel rounded-[2rem] px-6 py-7 sm:px-8 sm:py-8">
+          <div className="glass-panel rounded-3xl px-6 py-7 sm:px-8 sm:py-8">
             <div className="mb-5 flex items-center gap-3 text-slate-950">
               <Sparkles className="size-5 text-orange-500" />
               <p className="font-display text-2xl font-semibold">
@@ -485,7 +486,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="glass-panel rounded-2rem px-6 py-7 sm:px-8 sm:py-8">
+          <div className="glass-panel rounded-3xl px-6 py-7 sm:px-8 sm:py-8">
             <div className="mb-5 flex items-center gap-3 text-slate-950">
               <BadgeCheck className="size-5 text-sky-500" />
               <p className="font-display text-2xl font-semibold">
@@ -493,7 +494,7 @@ export default function Home() {
               </p>
             </div>
             <a
-              className="btn-base w-full"
+              className="btn btn-ghost text-white rounded-full shadow-md"
               href={siteAuthor.personalSite}
               target="_blank"
               rel="noreferrer"
@@ -527,7 +528,7 @@ export default function Home() {
                 <ArrowRight className="size-4" />
               </a>
               <a
-                className="btn-base"
+                className="btn btn-ghost text-white rounded-4xl"
                 href={siteAuthor.personalSite}
                 target="_blank"
                 rel="noreferrer"
